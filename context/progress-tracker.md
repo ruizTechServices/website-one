@@ -8,7 +8,7 @@ path: "C:/Users/giost/CascadeProjects/websites/schoolWorksheetGenerator/website-
 
 ## Current Objective
 
-Establish complete project context documentation before implementation.
+SPEC-001 project context alignment is complete. The next recommended objective is SPEC-002 design-system foundation.
 
 ## Active Scope
 
@@ -35,6 +35,8 @@ The MVP supports Kindergarten, 1st Grade, and 2nd Grade only. It generates one-p
 - Architecture context filled.
 - Code standards context filled.
 - Initial planning-only feature-spec roadmap created.
+- SPEC-001 completion criteria verified and marked complete.
+- Repository initialized and `main` is tracking `origin/main`.
 
 ## In Progress
 
@@ -74,6 +76,7 @@ Status: Complete
 - `context/architecture-context.md`
 - `context/code-standards.md`
 - `context/progress-tracker.md`
+- `context/feature-specs/001-project-context-alignment.md`
 
 #### Files created
 
@@ -93,6 +96,8 @@ Status: Complete
 - Preserved `context/ui-context.md` as the visual design and UI system source of truth.
 - Preserved `context/ai-workflow-rules.md` as the Codex workflow/process source of truth.
 - Established the planning-only feature-spec roadmap.
+- Marked SPEC-001 completion criteria complete.
+- Confirmed the repository is initialized and `main` tracks `origin/main`.
 
 #### Verification
 
