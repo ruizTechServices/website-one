@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { isClerkConfigured } from "@/lib/auth/clerk-config";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,7 +33,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {isClerkConfigured() ? (
+          <ClerkProvider>{children}</ClerkProvider>
+        ) : (
+          children
+        )}
+      </body>
     </html>
   );
 }

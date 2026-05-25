@@ -63,8 +63,8 @@ Add Clerk authentication structure for TinySheets, including sign-in, sign-up, G
 
 ## Completion criteria
 
-- [ ] Clerk provider and route protection are in place.
-- [ ] Sign-in and sign-up routes exist.
-- [ ] Dashboard routing requires authentication.
-- [ ] Auth architecture remains Clerk-first.
-- [ ] Progress tracker records changed files, verification, and any open auth decisions.
+- [x] Clerk provider and route protection are in place.
+- [x] Sign-in and sign-up routes exist.
+- [x] Dashboard routing requires authentication.
+- [x] Auth architecture remains Clerk-first.
+- [x] Progress tracker records changed files, verification, and any open auth decisions.

@@ -39,7 +39,8 @@ Each layer should depend downward on more focused layers. UI components should n
 
 ## Current Implementation Baseline
 
-SPEC-002 established the first app scaffold and design-system foundation:
+SPEC-002 established the first app scaffold and design-system foundation, and
+SPEC-003 added the first Clerk auth shell:
 
 - Next.js `16.2.6`
 - React `19.2.4`
@@ -48,6 +49,7 @@ SPEC-002 established the first app scaffold and design-system foundation:
 - shadcn/ui `base-nova`
 - Base UI-backed shadcn primitives
 - Lucide icons
+- Clerk Next.js SDK
 - App Router without a `src/` directory
 - `@/*` import alias
 
@@ -59,11 +61,17 @@ components/
   ui/
   primitives/
   atoms/
+  molecules/
+  organisms/
+  templates/
 lib/
+  auth/
   constants/
 ```
 
-No Clerk, Supabase, worksheet-generation engine, or PDF-generation package has been added yet.
+Clerk is now the primary auth system. Supabase, worksheet-generation engine,
+PDF-generation packages, payments, student features, and persistence have not
+been added yet.
 
 ## Application Boundaries
 
@@ -104,22 +112,22 @@ The PDF layer should be independent enough to support future answer keys and mul
   currently redirects to /design-system until the marketing landing page is implemented
 
 /sign-in
-  planned Clerk sign-in
+  implemented Clerk sign-in route shell
 
 /sign-up
-  planned Clerk sign-up
+  implemented Clerk sign-up route shell
 
 /dashboard
-  planned teacher/tutor dashboard
+  implemented protected teacher/tutor dashboard shell
 
 /dashboard/generate
-  planned worksheet generator
+  implemented protected route shell; generator not implemented yet
 
 /dashboard/worksheets
-  planned saved worksheets
+  implemented protected route shell; saved worksheets not implemented yet
 
 /dashboard/pdf-exports
-  planned PDF export history
+  implemented protected route shell; PDF export history not implemented yet
 
 /admin
   planned admin dashboard
@@ -209,6 +217,14 @@ Clerk handles:
 - Session state
 - User identity
 - Future role metadata
+
+Current auth shell implementation:
+
+- `ClerkProvider` is mounted at the root app boundary when Clerk environment keys are present.
+- `proxy.ts` protects `/dashboard` routes with Clerk when configured.
+- When Clerk keys are absent in local development, `/sign-in` and `/sign-up` render a setup notice and protected dashboard routes redirect to `/sign-in` without exposing or inventing secrets.
+- Dashboard layouts re-check authenticated user state server-side through `lib/auth/require-user.ts`.
+- Role metadata convention starts with `publicMetadata.role` values of `teacher`, `tutor`, or `admin`.
 
 Supabase records should reference the Clerk user ID.
 

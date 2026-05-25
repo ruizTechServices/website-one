@@ -1207,6 +1207,15 @@ SPEC-002 implemented the initial `/design-system` route with:
 
 This route remains a development preview surface, not a production dashboard or marketing page.
 
+SPEC-003 implemented the first auth shell with:
+
+- `/sign-in` and `/sign-up` routes using the shared `AuthShell` template
+- Protected `/dashboard` route shells using the shared `DashboardShell`
+- Navigation, topbar, and setup/status UI composed from existing TinySheets primitives and atoms
+- A no-secret Clerk setup notice for local environments missing Clerk keys
+
+The auth shell is not a worksheet generator, PDF workflow, student feature, payment feature, or data persistence layer.
+
 ---
 
 ## Anti-Drift Rules
