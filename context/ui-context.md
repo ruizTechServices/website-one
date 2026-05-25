@@ -1195,6 +1195,18 @@ This route exists to master the visual system before assembling full pages.
 
 It can be removed or protected before production.
 
+### Current Implementation Status
+
+SPEC-002 implemented the initial `/design-system` route with:
+
+- TinySheets theme tokens in `app/globals.css`
+- shadcn/ui base components in `components/ui/`
+- primitive wrappers in `components/primitives/`
+- first atoms in `components/atoms/`
+- static examples sourced from `lib/constants/design-system.ts`
+
+This route remains a development preview surface, not a production dashboard or marketing page.
+
 ---
 
 ## Anti-Drift Rules

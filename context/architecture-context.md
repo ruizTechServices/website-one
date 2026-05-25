@@ -37,6 +37,34 @@ Each layer should depend downward on more focused layers. UI components should n
 - PDF renderer
 - Vercel deployment
 
+## Current Implementation Baseline
+
+SPEC-002 established the first app scaffold and design-system foundation:
+
+- Next.js `16.2.6`
+- React `19.2.4`
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui `base-nova`
+- Base UI-backed shadcn primitives
+- Lucide icons
+- App Router without a `src/` directory
+- `@/*` import alias
+
+Implemented directories now include:
+
+```txt
+app/
+components/
+  ui/
+  primitives/
+  atoms/
+lib/
+  constants/
+```
+
+No Clerk, Supabase, worksheet-generation engine, or PDF-generation package has been added yet.
+
 ## Application Boundaries
 
 ### UI Layer
@@ -72,38 +100,38 @@ The PDF layer should be independent enough to support future answer keys and mul
 ## Route Map
 
 ```txt
-/
-  marketing landing page
+/ 
+  currently redirects to /design-system until the marketing landing page is implemented
 
 /sign-in
-  Clerk sign-in
+  planned Clerk sign-in
 
 /sign-up
-  Clerk sign-up
+  planned Clerk sign-up
 
 /dashboard
-  teacher/tutor dashboard
+  planned teacher/tutor dashboard
 
 /dashboard/generate
-  worksheet generator
+  planned worksheet generator
 
 /dashboard/worksheets
-  saved worksheets
+  planned saved worksheets
 
 /dashboard/pdf-exports
-  PDF export history
+  planned PDF export history
 
 /admin
-  admin dashboard
+  planned admin dashboard
 
 /admin/users
-  user management shell
+  planned user management shell
 
 /admin/system-health
-  platform health shell
+  planned platform health shell
 
 /design-system
-  temporary design-system preview route
+  implemented temporary design-system preview route
 ```
 
 Routes should stay thin. Reusable UI belongs in components. Domain logic belongs in `lib/`.

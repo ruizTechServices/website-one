@@ -2,6 +2,8 @@
 spec: 002
 title: "Design System Foundation"
 description: "Plan the initial TinySheets visual system, primitive wrappers, atoms, and design-system preview."
+status: complete
+completed: 2026-05-25
 ---
 
 # 002 - Design System Foundation
@@ -64,9 +66,9 @@ Implement the first UI foundation for TinySheets: theme tokens, shadcn/ui setup,
 
 ## Completion criteria
 
-- [ ] App scaffold exists if this is the first implementation spec.
-- [ ] TinySheets theme tokens exist.
-- [ ] Required primitive wrappers exist.
-- [ ] Required atoms exist.
-- [ ] `/design-system` previews the initial visual system.
-- [ ] Checks are recorded in `context/progress-tracker.md`.
+- [x] App scaffold exists if this is the first implementation spec.
+- [x] TinySheets theme tokens exist.
+- [x] Required primitive wrappers exist.
+- [x] Required atoms exist.
+- [x] `/design-system` previews the initial visual system.
+- [x] Checks are recorded in `context/progress-tracker.md`.
